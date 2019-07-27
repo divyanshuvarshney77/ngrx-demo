@@ -1,0 +1,13 @@
+<h2>Instructions</h2>
+<p>To add a course: Enter course name and click the 'Add Course' button</p>
+<p>To delete a course, click on the course item</p>
+<hr />
+
+Enter course name: <input [(ngModel)]='userCourse'/> <br/>
+<button (click)='addCourse()'>Add Course</button>
+
+<h1>Courses</h1>
+
+<ul *ngFor="let course of (courses | async); let i = index">
+  <li (click)="deleteCourse(i)">{{ i }} => {{ course.courseName }}</li>
+</ul>
